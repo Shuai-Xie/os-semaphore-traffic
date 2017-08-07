@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.shuai.traffic.TrafficActivity">
+
+    <TableRow
+        android:id="@+id/tableRowLights"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_total_time"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/light_red"
+                android:gravity="center"
+                android:text="模拟\n时长"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_total_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_car_number"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/light_yellow"
+                android:gravity="center"
+                android:text="车辆\n数量"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_car_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_green_time"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/light_green"
+                android:gravity="center"
+                android:text="绿灯\n时长"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edit_green_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text=""
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </TableRow>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_start"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tableRowLights"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/road" />
+
+
+        <TextView
+            android:id="@+id/tv_west_car"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/tableLayoutLights"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toEndOf="@+id/tableLayoutLights"
+            android:layout_toRightOf="@+id/tableLayoutLights"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="朝西"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_east_car"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/tableLayoutLights"
+            android:layout_marginBottom="-3dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/tableLayoutLights"
+            android:layout_toStartOf="@+id/tableLayoutLights"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="朝东"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_south_car"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/tableLayoutLights"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginRight="53dp"
+            android:layout_toLeftOf="@+id/tv_west_car"
+            android:layout_toStartOf="@+id/tv_west_car"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="center"
+            android:text="朝南"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_north_car"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/tableLayoutLights"
+            android:layout_marginLeft="54dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/tv_east_car"
+            android:layout_toRightOf="@+id/tv_east_car"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="center"
+            android:text="朝北"
+            android:textColor="@android:color/white" />
+
+        <TableLayout
+            android:id="@+id/tableLayoutLights"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:weightSum="2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_south_light"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@android:color/holo_green_light" />
+
+                <TextView
+                    android:id="@+id/tv_west_light"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/holo_red_light" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_east_light"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@android:color/holo_red_light" />
+
+                <TextView
+                    android:id="@+id/tv_north_light"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@android:color/holo_green_light" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:text="显示 (1,2)\n出现时间：1\n通过时间：2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="13dp" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/round_btn"
+        android:text="Start"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="26sp" />
+
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/round_btn"
+        android:text="Result"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_time"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/round_btn"
+        android:text="0"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>
